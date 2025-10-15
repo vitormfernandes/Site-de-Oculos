@@ -2,7 +2,7 @@ import http.server
 import socketserver
 import os
 
-PORT = 8000
+PORT = 8000 
 
 # Este manipulador simples serve arquivos a partir do diretório
 # onde o script Python é executado. É o ideal para a sua estrutura de pastas.
