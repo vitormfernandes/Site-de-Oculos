@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provador de Óculos Virtual</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="main-container">
+        <div id="viewer-container">
+            <div id="glass-container">
+                <div id="preview-3d"></div>
+            </div>
+            <video id="webcam" style="display: none;"></video>
+            <canvas id="debug-canvas"></canvas>
+            <canvas id="overlay-canvas"></canvas>
+        </div>
+        
+        <div id="model-selector">
+            <button class="selector-btn active" data-model="oculos1.stl">oculos1.stl</button>
+            <button class="selector-btn" data-model="oculos2.stl">oculos2.stl</button>
+            <button class="selector-btn" data-model="oculos3.stl">oculos3.stl</button>
+        </div>
+
+        <button id="tryOnBtn">Testar no Rosto</button>
+        <p>Preview ativo — clique para provar os óculos no rosto</p>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="OculosAnalyzer.js"></script>
+</body>
+</html>
