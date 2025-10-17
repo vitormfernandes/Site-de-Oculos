@@ -8,24 +8,28 @@
     
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/libs/inflate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/FBXLoader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="main-container">
         <div id="viewer-container">
+            
             <div id="glass-container">
                 <div id="preview-3d"></div>
             </div>
+
             <video id="webcam" style="display: none;"></video>
             <canvas id="debug-canvas"></canvas>
             <canvas id="overlay-canvas"></canvas>
         </div>
         
-        <div id="model-selector">
-            <button class="selector-btn active" data-model="oculos1.stl">oculos1.stl</button>
-            <button class="selector-btn" data-model="oculos2.stl">oculos2.stl</button>
-            <button class="selector-btn" data-model="oculos3.stl">oculos3.stl</button>
+        <div style="margin: 10px 0; display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+            <button id="reviewBtn">Modelos de revisão (<span id="reviewCount">0</span>)</button>
+            <label for="modelSelect">Modelo:</label>
+            <select id="modelSelect"></select>
         </div>
 
         <button id="tryOnBtn">Testar no Rosto</button>
